@@ -1,0 +1,11 @@
+version: '2'
+services:
+  postgres:
+    image: "postgres:latest"
+  redis:
+    image: "redis:latest"
+  api_listener:
+    build: .
+    command: nodemon index.js
+    volumes:
+      - .:/code
